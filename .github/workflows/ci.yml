@@ -1,0 +1,14 @@
+name: CI workflow
+
+on:
+  push:
+
+jobs:
+  build: #job ka naam
+    runs-on: ubuntu-latest #github runner (free)
+    steps:
+      - name: checkout code
+        uses: action/checkout@v4 #clone the code
+
+      - name: setup docker
+        uses: docker/setup-buildx-action@v4
